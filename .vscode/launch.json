@@ -9,7 +9,8 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/${fileBasenameNoExtension}",
+           // "program": "${workspaceFolder}/${fileBasenameNoExtension}",
+           "program": "/Users/wanghaozheng/Desktop/Edit/OJ//${fileBasenameNoExtension}",
             "args": [],
             "cwd": "${workspaceFolder}"
         }
