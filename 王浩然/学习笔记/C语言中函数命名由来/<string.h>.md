@@ -5,7 +5,7 @@
 | `strcmp`   | string compare                           | 字符串比较                             | `strcmp("Hello", "World");`          |
 | `strncmp`  | string compare (n characters)            | 比较字符串的前n个字符                  | `strncmp("Hello", "Help", 3);`       |
 | `strlen`   | string length                            | 字符串长度                             | `strlen("Hello");`                   |
-| `strchr`   | string character find (first occurrence) | 查找字符在字符串中首次出现的位置       | `strchr("Hello", 'e');`              |
+| `strchr`   | string character find (first occurrence) | 查找字符在字符串中首次出现的位置的地址       | `strchr("Hello", 'e');`              |
 | `strrchr`  | string character find (last occurrence)  | 查找字符在字符串中最后一次出现的位置   | `strrchr("Hello", 'l');`             |
 | `strstr`   | string find substring                    | 查找子字符串                           | `strstr("Hello World", "World");`    |
 | `strspn`   | string span                              | 检索字符串中连续的字符集合             | `strspn("abcde", "ab");`             |

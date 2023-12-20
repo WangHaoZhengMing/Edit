@@ -8,25 +8,27 @@
 #include <string.h>
 #include <stdlib.h>
 
-char* rounding(char *p)
+void rounding(char *p)
 {
    
-    
+   char* token=strtok("p",".");
+
+    printf("%s,token");
 }
 
 int main()
 {
     char num[100];
-    fget(num, 100, stdin);
+    fgets(num, 100, stdin);
     rounding(num);
-    if (num[0] == '0' && num[1] == '.')
-    {
-        printf("0");
-    }
-    else
-    {
-        /* code */
-    }
+    // if (num[0] == '0' && num[1] == '.')
+    // {
+    //     printf("0");
+    // }
+    // else
+    // {
+    //     /* code */
+    // }
 
     return 0;
 }
