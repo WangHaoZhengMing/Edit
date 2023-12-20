@@ -1,5 +1,6 @@
-// // #include <stdio.h>
+//该程序一共删减了三次，到最后终于出来了，太不容易了呜呜呜呜欧
 
+// // #include <stdio.h>
 // // // 计算一个数的所有真因子之和
 // // int sumOfProperDivisors(int num) {
 // //     int sum = 0;
