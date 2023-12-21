@@ -10,10 +10,17 @@
 
 void rounding(char *p)
 {
-   
-   char* token=strtok("p",".");
+   //char token[30];
+   char* token=strtok(p,".");
+    printf("%s", token);
+  
+while (token=='0')
+{
+    token++;
+}
 
-    printf("%s,token");
+
+
 }
 
 int main()
