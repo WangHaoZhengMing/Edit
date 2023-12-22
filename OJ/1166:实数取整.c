@@ -9,17 +9,30 @@
 #include <stdlib.h>
 
 void rounding(char *p)
-{
+{ // 使用 strtok 函数分割输入字符串，以点号为分隔符。
+    char* token = strtok(p, ".");
    //char token[30];
-   char* token=strtok(p,".");
+   // token 现在指向点号之前的部分字符串。
+    // 如果我们只是移除前导零，就没有必要将它复制到另一个数组中。
+    
+    // 通过增加 token 指针来跳过前导零。
+    while (*token == '0')
+    {
+        token++;
+    }
+    
+    // 如果所有字符都是零，我们希望至少打印一个 '0'。
+    if (*token == '\0')
+    {
+        // 所有字符都是零，所以我们将 token 设置为指向 "0" 字符串。
+        token = "0";
+    }
+    
+    // 打印结果。
     printf("%s", token);
-  
-while (token=='0')
-{
-    token++;
-}
-
-
+    
+    // 如果有小数部分，我们可能也想处理它。
+    // 然而，原始代码中缺少了这部分逻辑。
 
 }
 
