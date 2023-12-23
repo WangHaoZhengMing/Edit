@@ -37,7 +37,7 @@ void output_info(int n, Student students[n])
     }
 }
 
-// 编写利用指针实现按总成绩排序的函数
+// 编写利用指针实现按总成绩排序的函数(其实不是的啦）
 void sa(int n, Student students[n])
 {
     int mark[n];
