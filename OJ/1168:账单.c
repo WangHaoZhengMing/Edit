@@ -3,20 +3,31 @@
 // 输出
 // 每个测试实例对应一行输出,输出总的花费,小数点后保留一位数字.
 #include <stdio.h>
-int main()
-{
-    int n,count;
-    scanf("%d", n);
-scanf("%d",count);
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < count; j++)
-        {
-            char arr[100];
-            fgets(arr,100,stdin);
+#include <string.h>
+
+int main() {
+    int ncase, n;
+    scanf("%d", &ncase); // 读取测试实例的数量
+
+    while (ncase--) {
+        scanf("%d", &n); // 读取每个测试实例的行数
+
+        char line[210]; // 用于存储输入行
+        double total = 0.0, cost;
+        char name[200];
+
+        // 清除缓冲区
+        getchar();
+
+        for (int i = 0; i < n; i++) {
+            fgets(line, sizeof(line), stdin); // 读取整行输入
+            // 从字符串中解析出花费
+            sscanf(line, "%*s %lf", &cost);
+            total += cost;
         }
-        
+
+        printf("%.1f\n", total); // 输出总花费，保留一位小数
     }
-    
+
     return 0;
 }
