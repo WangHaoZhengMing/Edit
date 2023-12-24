@@ -1,8 +1,3 @@
-//根本做不对
-
-
-
-
 
 // 任意给你一个整数,这个数可能很大(最长不超过100位),你能求出它的逆转数吗?
 // 逆转数定义如下:
@@ -13,26 +8,28 @@
 // reverse (-56) = -65
 // 要求定义并使用如下函数:void reverse(char *str)
 
+// 本解法思路清晰，解法新奇，反正我是真的想不到诶
 #include <stdio.h>
 #include <string.h>
-#include <stdbool.h>
-
-void reverse(char *str) {
+static int now = 0;
+void reverse(char *str)
+{
     int len = strlen(str);
-    bool isNegative = (str[0] == '-'); // 检查是否为负数
-    int start = isNegative ? 1 : 0; // 如果是负数,从索引1开始逆转
-    int end = len - 1;
+    int start = 0, end = len - 1;
+    int zero_count = 0;
 
-    // 移除尾部的零,并记录零的数量
-    while (end >= start && str[end] == '0') {
+    // 计算末尾0的数量
+    while (end >= 0 && str[end] == '0')
+    {
+        zero_count++;
         end--;
     }
 
-    // 计算尾部零的数量
-    int zeroCount = len - 1 - end;
+    // 逆转字符串中非0的部分
 
-    // 逆转数字部分(不包括尾部零和负号)
-    while (start < end) {
+    now = end;
+    while (start < end)
+    {
         char temp = str[start];
         str[start] = str[end];
         str[end] = temp;
@@ -40,25 +37,32 @@ void reverse(char *str) {
         end--;
     }
 
-    // 将尾部的零移动到逆转后的数字前面
-    if (zeroCount > 0) {
-        memmove(str + zeroCount, str, len - zeroCount);
-        memset(str, '0', zeroCount);
-    }
-
-    // 保证字符串正确终止
-    str[len] = '\0';
+    // 将末尾的0移动到字符串的开头
+    // if (zero_count > 0)
+    // {
+    //     memmove(str + zero_count, str, len - zero_count);
+    //     memset(str, '0', zero_count);
+    //     str[len] = '\0'; // 确保字符串以null字符结尾
+    // }
 }
 
-int main() {
-    char number[101];
-    //printf("Enter a large integer (up to 100 digits): ");
-    fgets(number, 101, stdin);
-    
-    // 移除可能存在的换行符
-    number[strcspn(number, "\n")] = 0;
+int main()
+{
+    char number[100]; // 示例输入
+    scanf("%s", number);
+    if (number[0] == '-')
+    {
+        reverse(number);
+        number[now] = '\0';
+        printf("-");
+        printf("%s", number);
+    }
 
-    reverse(number);
-    printf("%s\n", number);
+    else
+    {
+        reverse(number);
+
+        printf("%s", number);
+    }
     return 0;
 }
