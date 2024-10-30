@@ -2,10 +2,10 @@ import Foundation
 
 // 定义节点类，表示哈夫曼树中的一个节点
 class Node {
-    var character: Character?  // 当前节点的字符（对于内部节点为空）
-    var frequency: Int         // 当前节点的字符频率
-    var left: Node?            // 左子节点
-    var right: Node?           // 右子节点
+    var character: Character?  // 已经是 Optional
+    var frequency: Int        
+    var left: Node?           // 已经是 Optional
+    var right: Node?          // 已经是 Optional
     
     // 构造函数，用于初始化节点，内部节点没有字符
     init(character: Character? = nil, frequency: Int, left: Node? = nil, right: Node? = nil) {
